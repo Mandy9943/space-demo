@@ -3,11 +3,12 @@ import styled from "styled-components";
 
 interface IProps {
   title: string;
+  marginBottom?: boolean;
 }
 
-const LaunchSection: React.FC<IProps> = ({ title, children }) => {
+const LaunchSection: React.FC<IProps> = ({ title, children, marginBottom }) => {
   return (
-    <LaunchSectionS>
+    <LaunchSectionS marginBottom={marginBottom}>
       <h2 className="heading">{title}</h2>
       <ContentS>{children}</ContentS>
     </LaunchSectionS>
@@ -16,8 +17,8 @@ const LaunchSection: React.FC<IProps> = ({ title, children }) => {
 
 export default LaunchSection;
 
-const LaunchSectionS = styled.div`
-  margin-bottom: 100px;
+const LaunchSectionS = styled.div<{ marginBottom?: boolean }>`
+  margin-bottom: ${(props) => (props.marginBottom ? "100px" : "0 !important")};
   width: 100%;
   background: var(--white);
   color: var(--dark);

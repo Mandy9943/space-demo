@@ -47,6 +47,7 @@ const LaunchesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20px;
 `;
 const LaunchesS = styled.div`
   width: 100%;

@@ -8,7 +8,7 @@ interface IProps {
 
 const MissionSection: React.FC<IProps> = ({ mission }) => {
   return (
-    <LaunchSection title={"Mission"}>
+    <LaunchSection title={"Mission"} marginBottom>
       <ItemSection name="Name" value={mission.name} />
       <ItemSection name="Orbit" value={mission.orbit} />
       <ItemSection name="Description" value={mission.description} />

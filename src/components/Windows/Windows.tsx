@@ -19,6 +19,9 @@ const Windows: React.FC<IProps> = ({ start, end }) => {
 
   return (
     <WindowsS>
+      <div className="logo">
+        <img src="/rocketWhite.svg" alt="Logo" />
+      </div>
       <div className="with-mt with-mb">
         <h3>Window Start : {startDate.toLocaleString("en", options)}</h3>
       </div>
@@ -39,4 +42,9 @@ const WindowsS = styled.div`
   align-items: flex-end;
   justify-content: right;
   padding: 16px;
+  .logo {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+  }
 `;

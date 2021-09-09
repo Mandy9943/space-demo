@@ -18,6 +18,7 @@ export default Title;
 const TitleS = styled.div`
   text-align: center;
   margin-bottom: 4.5rem;
+  padding: 0 10px;
   h1 {
     color: var(--white);
     font-size: 3rem;

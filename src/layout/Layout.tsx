@@ -16,5 +16,4 @@ const LayoutS = styled.div<{ backgound_image: string }>`
   background-image: url(${(props) => props.backgound_image});
   width: 100%;
   min-height: 100vh;
-  padding: 15px;
 `;
