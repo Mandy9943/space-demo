@@ -8,8 +8,7 @@ interface IProps {
 
 const ItemSection: React.FC<IProps> = ({ name, value }) => {
   // eslint-disable-next-line
-  const regexp =
-    /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+  const regexp =/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
   const linkSatus: boolean = regexp.test(value);
   return (
     <ItemSectionS>
