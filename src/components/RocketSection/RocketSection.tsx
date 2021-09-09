@@ -70,8 +70,8 @@ const RocketSection: React.FC<IProps> = ({ rocket }) => {
           />
           <ItemSection name="Info" value={rocket.info_url} />
           <ItemSection name="URl" value={rocket.url} />
-          <ItemSection name="Max Stage" value={rocket.max_stage.toString()} />
-          <ItemSection name="Min Stage" value={rocket.min_stage.toString()} />
+          <ItemSection name="Max Stage" value={rocket.max_stage?.toString()} />
+          <ItemSection name="Min Stage" value={rocket.min_stage?.toString()} />
         </div>
       </div>
     </RocketSectionS>

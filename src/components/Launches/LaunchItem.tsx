@@ -9,7 +9,11 @@ interface IProps {
 const LaunchItem: React.FC<IProps> = ({ launch }) => {
   return (
     <LaunchItemS>
-      <Link to={`/launch/${launch.id}`}>
+      <Link
+        to={`/launch/${launch.id}`}
+        className="linkItem"
+        style={{ textDecoration: "none" }}
+      >
         <ContentS>{launch.name}</ContentS>
       </Link>
     </LaunchItemS>
@@ -22,6 +26,9 @@ const LaunchItemS = styled.div`
   max-width: 400px;
   flex: 100%;
   padding: 30px;
+  .linkItem {
+    text-decoration: none;
+  }
 `;
 
 const ContentS = styled.div`

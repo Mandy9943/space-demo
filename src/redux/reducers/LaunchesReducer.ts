@@ -15,6 +15,7 @@ export const initialGeneralInfo: ILaunchesState = {
     previous: null,
     results: [],
   },
+  offset: 0,
 };
 
 export const launchesReducer: Reducer<ILaunchesState, LaunchesActions> = (
@@ -47,6 +48,12 @@ export const launchesReducer: Reducer<ILaunchesState, LaunchesActions> = (
         ...state,
         lunch: action.payload ? { ...action.payload } : null,
         loadingLunch: false,
+      };
+    }
+    case LaunchesActionTypes.SET_OFFSET: {
+      return {
+        ...state,
+        offset: action.payload,
       };
     }
   }

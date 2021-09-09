@@ -5,6 +5,7 @@ export enum LaunchesActionTypes {
   LOADING_GET_ALL = "LauncheS/GET/ALL/LOADING",
   GET_ONE = "LauncheS/GET/ONE",
   LOADING_GET_ONE = "LauncheS/GET/ONE/LOADING",
+  SET_OFFSET = "LAUNCHES/SET/OFFSET",
 }
 
 export interface ILaunchesGetAllLoadingAction {
@@ -24,16 +25,22 @@ export interface ILaunchesGetOneAction {
   type: LaunchesActionTypes.GET_ONE;
   payload: any;
 }
+export interface ILaunchSetOffsetAction {
+  type: LaunchesActionTypes.SET_OFFSET;
+  payload: number;
+}
 
 export type LaunchesActions =
   | ILaunchesGetAllAction
   | ILaunchesGetOneAction
   | ILaunchesGetAllLoadingAction
-  | ILaunchesGetOneLoadingAction;
+  | ILaunchesGetOneLoadingAction
+  | ILaunchSetOffsetAction;
 
 export interface ILaunchesState {
   readonly launches: ILaunches;
   readonly lunch: any;
   readonly loadingLaunches: boolean;
   readonly loadingLunch: boolean;
+  readonly offset: number;
 }

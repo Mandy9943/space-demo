@@ -9,6 +9,7 @@ import {
   ILaunchesGetOneAction,
   ILaunchesGetOneLoadingAction,
   ILaunchesState,
+  ILaunchSetOffsetAction,
   LaunchesActionTypes,
 } from "../types/launchesTypes";
 
@@ -24,8 +25,8 @@ const loadingLaunches: ActionCreator<ILaunchesGetAllLoadingAction> = (
 };
 
 export const getLaunches: ActionCreator<
-  ThunkAction<Promise<AnyAction>, ILaunchesState, null, ILaunchesGetAllAction>
-> = () => {
+  ThunkAction<Promise<AnyAction>, ILaunchesState, string, ILaunchesGetAllAction>
+> = (config?: string) => {
   return async (dispatch: Dispatch) => {
     dispatch(loadingLaunches(true));
     const launchesServices = new LunchServices();
@@ -38,7 +39,7 @@ export const getLaunches: ActionCreator<
     };
 
     await launchesServices
-      .getAllUpcoming()
+      .getAllUpcoming(config)
       .then((res: any) => {
         launches = res;
       })
@@ -83,5 +84,15 @@ export const getLaunch: ActionCreator<
       payload: launches,
       type: LaunchesActionTypes.GET_ONE,
     });
+  };
+};
+
+export const setPageOffset: ActionCreator<ILaunchSetOffsetAction> = (
+  page: number
+) => {
+  const offset = page * 10 - 10;
+  return {
+    type: LaunchesActionTypes.SET_OFFSET,
+    payload: offset,
   };
 };
