@@ -8,7 +8,8 @@ interface IProps {
 
 const ItemSection: React.FC<IProps> = ({ name, value }) => {
   // eslint-disable-next-line
-  const regexp =/(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+  const regexp =
+    /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
   const linkSatus: boolean = regexp.test(value);
   return (
     <ItemSectionS>
@@ -18,7 +19,12 @@ const ItemSection: React.FC<IProps> = ({ name, value }) => {
             <>
               <span className="name">{name} : </span>{" "}
               <p>
-                <a href={value}>{value}</a>{" "}
+                <a href={value}>
+                  <span className="responsive">
+                    {value.length > 30 ? value.slice(0, 30) + "..." : value}
+                  </span>
+                  <span className="desk">{value}</span>
+                </a>{" "}
               </p>
             </>
           ) : (
@@ -44,6 +50,17 @@ const ItemSectionS = styled.div`
     }
     p {
       display: inline;
+    }
+  }
+  .responsive {
+    display: none;
+  }
+  @media (max-width: 670px) {
+    .responsive {
+      display: inline;
+    }
+    .desk {
+      display: none;
     }
   }
 `;

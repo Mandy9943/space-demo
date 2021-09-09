@@ -22,9 +22,21 @@ const LaunchSectionS = styled.div`
   background: var(--white);
   color: var(--dark);
   padding: 40px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 7px var(--dark);
+
   .heading {
     font-size: 2.2rem;
     margin-bottom: 30px;
+    color: var(--primary);
+    @media (max-width: 600px) {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 20px;
   }
 `;
 

@@ -19,9 +19,8 @@ const LaunchItem: React.FC<IProps> = ({ launch }) => {
 export default LaunchItem;
 
 const LaunchItemS = styled.div`
-  width: 300px;
-
-  flex: 30%;
+  max-width: 400px;
+  flex: 100%;
   padding: 30px;
 `;
 

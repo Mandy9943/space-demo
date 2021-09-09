@@ -45,7 +45,7 @@ export const launchesReducer: Reducer<ILaunchesState, LaunchesActions> = (
     case LaunchesActionTypes.GET_ONE: {
       return {
         ...state,
-        lunch: { ...action.payload },
+        lunch: action.payload ? { ...action.payload } : null,
         loadingLunch: false,
       };
     }

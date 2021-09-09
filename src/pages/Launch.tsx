@@ -19,6 +19,7 @@ const Lunch = () => {
   const loading = useSelector<IApplicationState, boolean>(
     (state) => state.launches.loadingLunch
   );
+  console.log("lanuch", lanuch);
 
   useEffect(() => {
     dispatch(getLaunch(id));
@@ -30,9 +31,11 @@ const Lunch = () => {
           <>
             <Title title={lanuch.name} />
             <MainSectionS>
-              <MissionSection mission={lanuch.mission} />
-              <RocketSection rocket={lanuch.rocket.configuration} />
-              <PadSection pad={lanuch.pad} />
+              {lanuch.mission && <MissionSection mission={lanuch.mission} />}
+              {lanuch.rocket && (
+                <RocketSection rocket={lanuch.rocket.configuration} />
+              )}
+              {lanuch.pad && <PadSection pad={lanuch.pad} />}
             </MainSectionS>
           </>
         )}

@@ -8,10 +8,12 @@ const Overlay: React.FC = ({ children }) => {
 export default Overlay;
 
 const OverlayS = styled.div`
-  background: rgba(0, 0, 0, 0.6);
   width: 100%;
   height: 100%;
   padding: 20px;
   border-radius: 5px;
   overflow: auto;
+  @media (max-width: 670px) {
+    background: transparent;
+  }
 `;

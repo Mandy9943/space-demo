@@ -68,7 +68,7 @@ export const getLaunch: ActionCreator<
     dispatch(loadingLaunch(true));
     const launchesServices = new LunchServices();
 
-    let launches: any = {};
+    let launches: any = null;
 
     await launchesServices
       .getOneLunch(id)

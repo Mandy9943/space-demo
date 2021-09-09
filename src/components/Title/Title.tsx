@@ -24,4 +24,10 @@ const TitleS = styled.div`
     margin: 10px 0;
     text-transform: capitalize;
   }
+  @media (max-width: 600px) {
+    margin-bottom: 1.5rem;
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
 `;

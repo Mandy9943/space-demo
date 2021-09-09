@@ -84,9 +84,10 @@ const RocketSectionS = styled.div<{ img: string }>`
   display: flex;
   height: 600px;
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
+  margin-left: 100px;
   .img {
-    flex: 50%;
+    flex: 100%;
     background-image: url(${(props) => props.img});
     background-position: center;
     background-repeat: no-repeat;
@@ -98,11 +99,11 @@ const RocketSectionS = styled.div<{ img: string }>`
 
   .content {
     position: absolute;
-    top: 20%;
-    left: 40%;
+    top: 30%;
+    left: 50%;
     background: var(--white);
     color: var(--dark);
-    padding: 15px;
+    padding: 25px 45px;
     border-radius: 4px;
     .heading {
       font-size: 2.2rem;
@@ -110,6 +111,38 @@ const RocketSectionS = styled.div<{ img: string }>`
     }
     span {
       font-weight: bold;
+    }
+  }
+
+  @media (max-width: 1300px) {
+    margin-left: 20px;
+    margin-bottom: 200px;
+  }
+  @media (max-width: 1000px) {
+    .rigth {
+      display: none;
+    }
+    .content {
+      top: 85%;
+      left: 20%;
+      padding: 15px 25px;
+    }
+
+    margin-bottom: 500px;
+  }
+  @media (max-width: 670px) {
+    justify-content: center;
+    flex-direction: column;
+    height: 900px;
+    margin-bottom: 100px;
+    margin-left: 0;
+    .content {
+      position: static;
+      width: 100%;
+      border-radius: 0 0 4px 4px;
+      padding: 15px 25px;
+    }
+    .img {
     }
   }
 `;
