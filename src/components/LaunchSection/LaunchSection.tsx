@@ -22,7 +22,7 @@ const LaunchSectionS = styled.div`
   background: var(--white);
   color: var(--dark);
   padding: 40px;
-  border-radius: 10px;
+
   box-shadow: 2px 2px 7px var(--dark);
 
   .heading {

@@ -6,6 +6,7 @@ import MissionSection from "../components/MissionSection/MissionSection";
 import PadSection from "../components/PadSection/PadSection";
 import RocketSection from "../components/RocketSection/RocketSection";
 import Title from "../components/Title/Title";
+import Windows from "../components/Windows/Windows";
 import WrapperLoading from "../components/WithLoader/WrapperLoading";
 import { getLaunch } from "../redux/actions/LaunchesAction";
 import { IApplicationState } from "../store";
@@ -31,6 +32,30 @@ const Lunch = () => {
           <>
             <Title title={lanuch.name} />
             <MainSectionS>
+              {lanuch.image_url ? (
+                <ImageSectionS>
+                  <img
+                    src={lanuch.image_url}
+                    alt={`Launch of ${lanuch.name}`}
+                  />
+                  <WindowsWarpperS>
+                    {lanuch.window_start && (
+                      <Windows
+                        start={lanuch.window_start}
+                        end={lanuch.window_start}
+                      />
+                    )}
+                  </WindowsWarpperS>
+                </ImageSectionS>
+              ) : (
+                lanuch.window_start && (
+                  <Windows
+                    start={lanuch.window_start}
+                    end={lanuch.window_start}
+                  />
+                )
+              )}
+
               {lanuch.mission && <MissionSection mission={lanuch.mission} />}
               {lanuch.rocket && (
                 <RocketSection rocket={lanuch.rocket.configuration} />
@@ -50,4 +75,13 @@ const MainSectionS = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+`;
+const ImageSectionS = styled.div`
+  width: 100%;
+  position: relative;
+`;
+const WindowsWarpperS = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
 `;
