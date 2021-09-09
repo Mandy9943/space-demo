@@ -1,0 +1,27 @@
+import React from "react";
+import styled from "styled-components";
+
+interface IProps {
+  title: string;
+}
+
+const Title: React.FC<IProps> = ({ title }) => {
+  return (
+    <TitleS>
+      <h1>{title}</h1>
+    </TitleS>
+  );
+};
+
+export default Title;
+
+const TitleS = styled.div`
+  text-align: center;
+  margin-bottom: 4.5rem;
+  h1 {
+    color: var(--white);
+    font-size: 3rem;
+    margin: 10px 0;
+    text-transform: capitalize;
+  }
+`;
