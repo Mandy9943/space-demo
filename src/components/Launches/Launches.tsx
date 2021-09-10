@@ -15,7 +15,9 @@ interface IProps {
 const perPage: number = 10;
 
 const renderPaginationItem = (params: PaginationRenderItemParams) => {
-  return <PaginationItem {...params} color="primary" />;
+  return (
+    <PaginationItem {...params} color="primary" className="pagination-item" />
+  );
 };
 const Launches: React.FC<IProps> = ({ launches, handleChangePage, page }) => {
   return (
@@ -48,6 +50,9 @@ const LaunchesWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding-bottom: 20px;
+  .pagination-item {
+    color: white !important;
+  }
 `;
 const LaunchesS = styled.div`
   width: 100%;
